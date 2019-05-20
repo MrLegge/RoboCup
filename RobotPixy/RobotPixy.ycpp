@@ -1,0 +1,50 @@
+#include <SPI.h>  
+#include <Pixy.h>
+#include"RobotPixy.h"
+
+
+RobotPixy::RobotPixy(void) {
+  pixy.init();
+ }
+
+void RobotPixy::getData(){  
+  blocks = pixy.getBlocks();  
+ } 
+
+int RobotPixy::getArea(){
+	if (blocks){      
+      for (int j=0; j<blocks; j++){  
+        return pixy.blocks[j].width*pixy.blocks[j].height;       
+		}
+	}else{
+			return -1;
+		}	
+}
+
+int RobotPixy::getX(){
+	if (blocks){      
+      for (int j=0; j<blocks; j++){  
+        return pixy.blocks[j].x;       
+		}
+		}else{
+			return -1;
+		}	
+	}
+}
+bool RobotPixy::isInFront(){
+	if (blocks){      
+      for (int j=0; j<blocks; j++){  
+		if(pixy.blocks[j].x > 120 && pixy.blocks[j].x < 180){
+			return true;      
+		}else{
+			return false;
+			}
+	  }		
+	}else {
+		return -1;
+	}
+}
+
+void RobotPixy::multiSignals(){
+	
+}

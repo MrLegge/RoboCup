@@ -1,0 +1,22 @@
+#ifndef ROBOTPIXY_H
+#define ROBOTPIXY_H
+
+#include <SPI.h>  
+#include <Pixy.h>
+
+	class RobotPixy{
+		
+		public:
+			Pixy myPixy;
+		
+			RobotPixy();
+
+			int getArea();
+			bool isInFront();
+			int getX();
+			void multiSignals();
+			
+		private:
+			uint16_t blocks;	
+	}
+ #endif 

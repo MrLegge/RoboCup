@@ -1,0 +1,38 @@
+#include "RobotColourSensor.h"
+
+RobotColourSensor::RobotColourSensor(void){
+  robotColoursSensor = Adafruit_TCS34725();
+  isRed = false;
+  isGreen = false;
+  isBlue = false;
+  }
+
+  void getData(){
+      robotColoursSensor.getRawData(&red, &green, &blue, &clear);
+      if((red_color>blue_color) && (red_color>green_color)){
+         isRed = true;
+         isGreen = false;
+         isBlue = false;
+      }
+      else if((green_color>blue_color) && (green_color>red_color)){
+         isRed = false;
+         isGreen = true;
+         isBlue = false;
+        }
+      else if((blue_color>red_color) && (blue_color>green_color)){
+         isRed = false;
+         isGreen = false;
+         isBlue = true;
+        }
+
+      else{
+         isRed = false;
+         isGreen = false;
+         isBlue = false;
+        }
+        
+
+
+}      
+    }
+    

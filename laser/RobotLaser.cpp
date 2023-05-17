@@ -9,7 +9,7 @@ RobotLaser::RobotLaser(void){
 	pinMode(ledPin, OUTPUT);
 	}
     
-	void RobotLaser::Initialize(){    
+	void RobotLaser::initialize(){    
 		digitalWrite(ledPin, HIGH);
 	}
 	bool RobotLaser::beamBroken(){

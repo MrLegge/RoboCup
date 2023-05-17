@@ -3,7 +3,7 @@ RobotLaser *myLaser;
 
 void setup() {
 myLaser = new RobotLaser();
-myLaser->Initialize();
+myLaser->initialize();
 Serial.begin(9600);
 }
 

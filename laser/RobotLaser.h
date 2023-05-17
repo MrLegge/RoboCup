@@ -5,7 +5,7 @@
 
 		public:
 			RobotLaser();
-			void Initialize();
+			void initialize();
 			bool beamBroken();
 
 		protected:

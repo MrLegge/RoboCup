@@ -16,9 +16,9 @@
 			
 
 		protected:
-			int AccelerometerX;
-			int AccelerometerY;
-			int AccelerometerZ;
+			int accelerometerX;
+			int accelerometerY;
+			int accelerometerZ;
 
 	};
 #endif

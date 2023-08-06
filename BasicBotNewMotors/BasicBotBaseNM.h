@@ -32,8 +32,8 @@
 		  void rotateRight(unsigned short);
 		  void rotateLeft(unsigned short);
 		private:
-			L298N *motorRight;
-			L298N *motorLeft;
+			L298N *_motorRight;
+			L298N *_motorLeft;
 	};
 
 #endif 

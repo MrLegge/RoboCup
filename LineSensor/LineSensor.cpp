@@ -10,20 +10,21 @@
 #include <arduino.h>
 
 LineSensor::LineSensor(){
- signalPin = 2;
- lineFlag = false;
- pinMode(signalPin, INPUT);
+ _signalPin = 2;
+ _lineFlag = false;
+ pinMode(_signalPin, INPUT);
 }
 LineSensor::LineSensor(int signalPin){
- lineFlag = false;
+  _signalPin = signalPin;
+ _lineFlag = false;
  pinMode(signalPin, INPUT);
 }
 
 bool LineSensor::onLine(){
-    if(digitalRead(signalPin)){
-      lineFlag = false;
+    if(digitalRead(_signalPin)){
+      _lineFlag = false;
     }else {
-      lineFlag = true;
+      _lineFlag = true;
       }
-    return lineFlag;    
+    return _lineFlag;    
   }

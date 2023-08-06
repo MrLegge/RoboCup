@@ -14,8 +14,8 @@
        class LineSensor{
 
           public:
-            LineSensor();
-			LineSensor(int);
+	LineSensor();
+	LineSensor(int);
             
             bool onLine();
           //  bool reverse();

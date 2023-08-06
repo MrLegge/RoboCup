@@ -22,33 +22,33 @@
       rightIn2 = 9;
       leftIn1 = 5;
       leftIn2 = 4;
-      motorRight = new L298N(rightSignal,rightIn1,rightIn2);
-      motorLeft = new L298N(leftSignal,leftIn1,leftIn2);
+      _motorRight = new L298N(rightSignal,rightIn1,rightIn2);
+      _motorLeft = new L298N(leftSignal,leftIn1,leftIn2);
     }
   void BasicBotBase::driveForward(unsigned short rightWheel, unsigned short leftWheel){
-      motorRight->setSpeed(rightWheel);
-      motorLeft->setSpeed(leftWheel);
-      motorRight->backward();
-      motorLeft->forward();
+      _motorRight->setSpeed(rightWheel);
+      _motorLeft->setSpeed(leftWheel);
+      _motorRight->backward();
+      _motorLeft->forward();
     }
   void BasicBotBase::driveBackward(unsigned short rightWheel, unsigned short leftWheel){
-      motorRight->setSpeed(rightWheel);
-      motorLeft->setSpeed(leftWheel);
-      motorRight->forward();
-      motorLeft->backward();
+      _motorRight->setSpeed(rightWheel);
+      _motorLeft->setSpeed(leftWheel);
+      _motorRight->forward();
+      _motorLeft->backward();
     
     }
   void BasicBotBase::rotateRight(unsigned short turnSpeed){
-      motorRight->setSpeed(turnSpeed);
-      motorLeft->setSpeed(turnSpeed);
-      motorRight->backward();
-      motorLeft->backward();
+      _motorRight->setSpeed(turnSpeed);
+      _motorLeft->setSpeed(turnSpeed);
+      _motorRight->backward();
+      _motorLeft->backward();
     
     }
   void BasicBotBase::rotateLeft(unsigned short turnSpeed){
-      motorRight->setSpeed(turnSpeed);
-      motorLeft->setSpeed(turnSpeed);
-      motorRight->forward();
-      motorLeft->forward();
+      _motorRight->setSpeed(turnSpeed);
+      _motorLeft->setSpeed(turnSpeed);
+      _motorRight->forward();
+      _motorLeft->forward();
     
     }

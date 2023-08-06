@@ -2,22 +2,22 @@
 #include <Arduino.h>
 
 	RobotAccelerometer::RobotAccelerometer(){
-		accelerometerX = 0;
-		accelerometerY = 0;
-		accelerometerZ = 0;
+		_accelerometerX = 0;
+		_accelerometerY = 0;
+		_accelerometerZ = 0;
 	}
 	
 	int RobotAccelerometer::getAccelX(){
-		accelerometerX = analogRead(ACCELX);
-		return accelerometerX;
+		_accelerometerX = analogRead(ACCELX);
+		return _accelerometerX;
 	}
 	
 	int RobotAccelerometer::getAccelY(){
-		accelerometerY = analogRead(ACCELY);
-		return accelerometerY;	
+		_accelerometerY = analogRead(ACCELY);
+		return _accelerometerY;	
 	}
 	
 	int RobotAccelerometer::getAccelZ(){
-		accelerometerZ = analogRead(ACCELZ);
-		return accelerometerZ;
+		_accelerometerZ = analogRead(ACCELZ);
+		return _accelerometerZ;
 	}

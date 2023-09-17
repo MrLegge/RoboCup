@@ -1,25 +1,23 @@
-#include <SPI.h>  
-#include <Pixy.h>
-#include"RobotPixy.h"
+#include"RobotPixyV2.h"
 
 
 
-RobotPixy::RobotPixy(void) {
+RobotPixyV2::RobotPixyV2(void) {
   myPixy.init();
  }
 
-void RobotPixy::getData(){  
-  blocks = myPixy.getBlocks();  
+void RobotPixyV2::getData(){  
+  blocks = myPixy.ccc.getBlocks();  
  } 
 
-int RobotPixy::getArea(int requiredSignature){
+int RobotPixyV2::getArea(int requiredSignature){
    getData();
    int temp =0;
 	if (blocks){    
       for (int j=0; j<blocks; j++){
-		if (myPixy.blocks[j].signature == requiredSignature){
+		if (myPixy.ccc.blocks[j].signature == requiredSignature){
       for (int i = 0;i<10;i++){		
-			 temp = temp + myPixy.blocks[j].width*myPixy.blocks[j].height;
+			 temp = temp + myPixy.ccc.blocks[j].width*myPixy.ccc.blocks[j].height;
       }
       return temp/10;
 		}
@@ -31,23 +29,35 @@ int RobotPixy::getArea(int requiredSignature){
 		}	
 }
 
-int RobotPixy::getX(int requiredSignature){
+int RobotPixyV2::getX(int requiredSignature){
   getData();
 	if (blocks){      
       for (int j=0; j<blocks; j++){ 
-		if (myPixy.blocks[j].signature == requiredSignature)
-			return myPixy.blocks[j].x;       
+		if (myPixy.ccc.blocks[j].signature == requiredSignature)
+			return myPixy.ccc.blocks[j].x;       
+		}
+		}else{
+			return -1;
+		}	
+	}
+	
+int RobotPixyV2::getY(int requiredSignature){
+  getData();
+	if (blocks){      
+      for (int j=0; j<blocks; j++){ 
+		if (myPixy.ccc.blocks[j].signature == requiredSignature)
+			return myPixy.ccc.blocks[j].y;       
 		}
 		}else{
 			return -1;
 		}	
 	}
 
-bool RobotPixy::isInFront(int requiredSignature){
+bool RobotPixyV2::isInFront(int requiredSignature){
    getData();
 	if (blocks){      
       for (int j=0; j<blocks; j++){  
-		if(myPixy.blocks[j].x > 120 && myPixy.blocks[j].x < 180 && myPixy.blocks[j].signature == requiredSignature){
+		if(myPixy.ccc.blocks[j].x > 120 && myPixy.ccc.blocks[j].x < 180 && myPixy.ccc.blocks[j].signature == requiredSignature){
 			return true;      
 		}else{
 			return false;
@@ -58,5 +68,9 @@ bool RobotPixy::isInFront(int requiredSignature){
 	}
 }
 
-
-
+void RobotPixyV2::lightsOn(){
+	myPixy.setLamp(true,true);	
+}
+void RobotPixyV2::lightsOff(){
+	myPixy.setLamp(false,false);	
+}

@@ -1,22 +1,27 @@
-#ifndef ROBOTPIXY_H
-#define ROBOTPIXY_H
+#ifndef ROBOTPIXYV2_H
+#define ROBOTPIXYV2_H
+ 
+#include <Pixy2.h>
+#include <stdint.h>
 
-#include <SPI.h>  
-#include <Pixy.h>
 
-	class RobotPixy{
+	class RobotPixyV2{
 		
 		public:
-			Pixy myPixy;
-			uint16_t blocks;
-
-			void getData();
+			Pixy2 myPixy;
+			
 			int getArea(int);
 			bool isInFront(int);
 			int getX(int);
-
-      
+			int getY(int);
+			void lightsOn(void); 
+			void lightsOff(void);
 			RobotPixy();
+			
+		private:
+			uint16_t blocks;
+		
+			void getData(void);
 
 	};
 #endif

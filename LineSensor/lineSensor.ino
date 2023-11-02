@@ -12,6 +12,7 @@ LineSensor *mySensor;
 void setup() {
    mySensor = new LineSensor();
   //mySensor = new LineSensor(2);
+  Serial.begin(9600);
 }
 
 void loop() {

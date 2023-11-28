@@ -19,9 +19,9 @@
 			RobotPixy();
 			
 		private:
-			uint16_t blocks;
+			uint16_t _blocks;
 		
-			void getData(void);
+			void _getData(void);
 
 	};
 #endif

@@ -9,8 +9,8 @@
 			bool beamBroken();
 
 		protected:
-			int sensorValue;
-			int sensorPin;
-			int ledPin;
+			int _sensorValue;
+			int _sensorPin;
+			int _ledPin;
 	};
 #endif

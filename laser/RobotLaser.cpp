@@ -3,18 +3,18 @@
 
 
 RobotLaser::RobotLaser(void){
-	sensorValue = 0;
-	sensorPin = A0;
-	ledPin = 13;
-	pinMode(ledPin, OUTPUT);
+	_sensorValue = 0;
+	_sensorPin = A0;
+	_ledPin = 13;
+	pinMode(_ledPin, OUTPUT);
 	}
     
 	void RobotLaser::initialize(){    
-		digitalWrite(ledPin, HIGH);
+		digitalWrite(_ledPin, HIGH);
 	}
 	bool RobotLaser::beamBroken(){
-		sensorValue = analogRead(sensorPin);
-		if (sensorValue < 850){
+		_sensorValue = analogRead(_sensorPin);
+		if (_sensorValue < 850){
 			return true;
 		}else{
 			return false;

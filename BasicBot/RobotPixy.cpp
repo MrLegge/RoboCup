@@ -7,14 +7,14 @@ RobotPixyV2::RobotPixyV2(void) {
  }
 
 void RobotPixyV2::getData(){  
-  blocks = myPixy.ccc.getBlocks();  
+  _blocks = myPixy.ccc.getBlocks();  
  } 
 
 int RobotPixyV2::getArea(int requiredSignature){
-   getData();
+   _getData();
    int temp =0;
-	if (blocks){    
-      for (int j=0; j<blocks; j++){
+	if (_blocks){    
+      for (int j=0; j<_blocks; j++){
 		if (myPixy.ccc.blocks[j].signature == requiredSignature){
       for (int i = 0;i<10;i++){		
 			 temp = temp + myPixy.ccc.blocks[j].width*myPixy.ccc.blocks[j].height;
@@ -31,8 +31,8 @@ int RobotPixyV2::getArea(int requiredSignature){
 
 int RobotPixyV2::getX(int requiredSignature){
   getData();
-	if (blocks){      
-      for (int j=0; j<blocks; j++){ 
+	if (_blocks){      
+      for (int j=0; j<_blocks; j++){ 
 		if (myPixy.ccc.blocks[j].signature == requiredSignature)
 			return myPixy.ccc.blocks[j].x;       
 		}
@@ -43,10 +43,10 @@ int RobotPixyV2::getX(int requiredSignature){
 	
 int RobotPixyV2::getY(int requiredSignature){
   getData();
-	if (blocks){      
-      for (int j=0; j<blocks; j++){ 
-		if (myPixy.ccc.blocks[j].signature == requiredSignature)
-			return myPixy.ccc.blocks[j].y;       
+	if (_blocks){      
+      for (int j=0; j<_blocks; j++){ 
+		if (myPixy.ccc._blocks[j].signature == requiredSignature)
+			return myPixy.ccc._blocks[j].y;       
 		}
 		}else{
 			return -1;
@@ -55,9 +55,9 @@ int RobotPixyV2::getY(int requiredSignature){
 
 bool RobotPixyV2::isInFront(int requiredSignature){
    getData();
-	if (blocks){      
-      for (int j=0; j<blocks; j++){  
-		if(myPixy.ccc.blocks[j].x > 120 && myPixy.ccc.blocks[j].x < 180 && myPixy.ccc.blocks[j].signature == requiredSignature){
+	if (_blocks){      
+      for (int j=0; j<_blocks; j++){  
+		if(myPixy.ccc._blocks[j].x > 120 && myPixy.ccc._blocks[j].x < 180 && myPixy.ccc._blocks[j].signature == requiredSignature){
 			return true;      
 		}else{
 			return false;

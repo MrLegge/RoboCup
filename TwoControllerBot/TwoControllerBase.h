@@ -17,22 +17,22 @@
 
 	class TwoControllerBase{
 		public:
-		  const int MAX_SPEED = 255; 
-		  const int THREE_QUARTER_SPEED = 138; 
-		  const int HALF_SPEED = 92; 
-		  const int QUARTER_SPEED = 46;  
-		  const int MIN_SPEED = 15; 
-		  int rightFrontSignal, rightFrontIn1, rightFrontIn2, rightRearSignal, rightRearIn1, rightRearIn2; 
-		  int leftFrontSignal, leftFrontIn1, leftFrontIn2, leftRearSignal, leftRearIn1, leftRearIn2; 
-		  
-		  TwoControllerBase();
-		  
-		  void driveForward(unsigned short);
-		  void driveBackward(unsigned short);
-		  void driveRight(unsigned short);
-		  void driveLeft(unsigned short);
-		  void rotateRight(unsigned short);
-		  void rotateLeft(unsigned short);
+			const int MAX_SPEED = 255; 
+			const int THREE_QUARTER_SPEED = 138; 
+			const int HALF_SPEED = 92; 
+			const int QUARTER_SPEED = 46;  
+			const int MIN_SPEED = 15; 
+			int rightFrontSignal, rightFrontIn1, rightFrontIn2, rightRearSignal, rightRearIn1, rightRearIn2; 
+			int leftFrontSignal, leftFrontIn1, leftFrontIn2, leftRearSignal, leftRearIn1, leftRearIn2; 
+
+			TwoControllerBase();
+
+			void driveForward(unsigned short);
+			void driveBackward(unsigned short);
+			void driveRight(unsigned short);
+			void driveLeft(unsigned short);
+			void rotateRight(unsigned short);
+			void rotateLeft(unsigned short);
 		private:
 			L298N *_motorFrontRight;
 			L298N *_motorFrontLeft;

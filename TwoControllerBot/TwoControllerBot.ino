@@ -19,7 +19,7 @@
  *   eg. myBase->rotateRight(myBase->HALF_SPEED);
  ******************************************************/
 
-//#include "RobotPixy.h"
+#include "RobotPixy.h"
 
 /*******************************************************
  * These comands all need to go into the loop function
@@ -59,13 +59,13 @@
  * *****************************************************/
  
 TwoControllerBase *myBase;
-//RobotPixy *myPixy;
+RobotPixy *myPixy;
 int ball, goal, ownGoal;
 
 void setup(){
 	// the code you write in here runs once at the very start of the program
 	myBase = new TwoControllerBase();
-	//myPixy = new RobotPixy();
+	myPixy = new RobotPixy();
 	ball = 1;
 	goal = 2;
 	ownGoal = 3;

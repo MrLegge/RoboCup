@@ -27,10 +27,10 @@
 
 			TwoControllerBase();
 
-			void driveForward(unsigned short);
-			void driveBackward(unsigned short);
-			void driveRight(unsigned short);
-			void driveLeft(unsigned short);
+			void driveForward(unsigned short, unsigned short);
+			void driveBackward(unsigned short, unsigned short);
+			void driveRight(unsigned short, unsigned short);
+			void driveLeft(unsigned short, unsigned short);
 			void rotateRight(unsigned short);
 			void rotateLeft(unsigned short);
 		private:

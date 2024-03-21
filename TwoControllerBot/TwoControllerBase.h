@@ -31,6 +31,10 @@
 			void driveBackward(unsigned short, unsigned short);
 			void driveRight(unsigned short, unsigned short);
 			void driveLeft(unsigned short, unsigned short);
+      void driveForwardLeft(unsigned short, unsigned short);
+      void driveForwardRight(unsigned short, unsigned short);
+      void driveBackwardLeft(unsigned short, unsigned short);
+      void driveBackwardRight(unsigned short, unsigned short);
 			void rotateRight(unsigned short);
 			void rotateLeft(unsigned short);
 		private:
@@ -41,3 +45,5 @@
 	};
 
 #endif 
+
+

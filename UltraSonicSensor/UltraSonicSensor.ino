@@ -21,7 +21,7 @@ void setup() {
 void loop() {	
 	unsigned long currentMillis = millis();
 	if(currentMillis - previousMillis > interval){
-		/* The Arduino executes this code once every second
+		/* This code runs once every second
 		*  (interval = 1000 (ms) = 1 second).
 		*/
 

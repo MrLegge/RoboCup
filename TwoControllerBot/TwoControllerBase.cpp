@@ -44,6 +44,53 @@ void TwoControllerBase::driveForward(unsigned short leftSpeed, unsigned short ri
 	_motorRearLeft->forward();
 }
 
+//forward diagonals
+void TwoControllerBase::driveForwardLeft(unsigned short leftSpeed, unsigned short rightSpeed){
+	_motorFrontRight->setSpeed(rightSpeed);
+	_motorFrontLeft->setSpeed(0);
+	_motorRearRight->setSpeed(0);
+	_motorRearLeft->setSpeed(leftSpeed);
+	_motorFrontRight->backward();
+	_motorFrontLeft->forward();
+	_motorRearRight->backward();
+	_motorRearLeft->forward();
+}
+
+void TwoControllerBase::driveForwardRight(unsigned short leftSpeed, unsigned short rightSpeed){
+	_motorFrontRight->setSpeed(0);
+	_motorFrontLeft->setSpeed(leftSpeed);
+	_motorRearRight->setSpeed(rightSpeed);
+	_motorRearLeft->setSpeed(0);
+	_motorFrontRight->backward();
+	_motorFrontLeft->forward();
+	_motorRearRight->backward();
+	_motorRearLeft->forward();
+}
+
+// backward diagonals
+void TwoControllerBase::driveBackwardRight(unsigned short leftSpeed, unsigned short rightSpeed){
+	_motorFrontRight->setSpeed(rightSpeed);
+	_motorFrontLeft->setSpeed(0);
+	_motorRearRight->setSpeed(0);
+	_motorRearLeft->setSpeed(leftSpeed);
+	_motorFrontRight->forward();
+	_motorFrontLeft->backward();
+	_motorRearRight->forward();
+	_motorRearLeft->backward();
+}
+
+void TwoControllerBase::driveBackwardLeft(unsigned short leftSpeed, unsigned short rightSpeed){
+	_motorFrontRight->setSpeed(0);
+	_motorFrontLeft->setSpeed(leftSpeed);
+	_motorRearRight->setSpeed(rightSpeed);
+	_motorRearLeft->setSpeed(0);
+	_motorFrontRight->forward();
+	_motorFrontLeft->backward();
+	_motorRearRight->forward();
+	_motorRearLeft->backward();
+}
+
+//backward
 void TwoControllerBase::driveBackward(unsigned short leftSpeed, unsigned short rightSpeed){
 	_motorFrontRight->setSpeed(rightSpeed);
 	_motorFrontLeft->setSpeed(leftSpeed);
@@ -54,6 +101,7 @@ void TwoControllerBase::driveBackward(unsigned short leftSpeed, unsigned short r
 	_motorRearRight->forward();
 	_motorRearLeft->backward();
 }
+
 
 void TwoControllerBase::driveRight(unsigned short frontSpeed, unsigned short backSpeed){
 	_motorFrontRight->setSpeed(frontSpeed);

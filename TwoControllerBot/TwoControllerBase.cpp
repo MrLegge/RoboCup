@@ -33,44 +33,44 @@ TwoControllerBase::TwoControllerBase(){
 	_motorRearLeft = new L298N(leftRearSignal,leftRearIn1,leftRearIn2);
 }
 
-void TwoControllerBase::driveForward(unsigned short driveSpeed){
-	_motorFrontRight->setSpeed(driveSpeed);
-	_motorFrontLeft->setSpeed(driveSpeed);
-	_motorRearRight->setSpeed(driveSpeed);
-	_motorRearLeft->setSpeed(driveSpeed);
+void TwoControllerBase::driveForward(unsigned short leftSpeed, unsigned short rightSpeed){
+	_motorFrontRight->setSpeed(rightSpeed);
+	_motorFrontLeft->setSpeed(leftSpeed);
+	_motorRearRight->setSpeed(rightSpeed);
+	_motorRearLeft->setSpeed(leftSpeed);
 	_motorFrontRight->backward();
 	_motorFrontLeft->forward();
 	_motorRearRight->backward();
 	_motorRearLeft->forward();
 }
 
-void TwoControllerBase::driveBackward(unsigned short driveSpeed){
-	_motorFrontRight->setSpeed(driveSpeed);
-	_motorFrontLeft->setSpeed(driveSpeed);
-	_motorRearRight->setSpeed(driveSpeed);
-	_motorRearLeft->setSpeed(driveSpeed);
+void TwoControllerBase::driveBackward(unsigned short leftSpeed, unsigned short rightSpeed){
+	_motorFrontRight->setSpeed(rightSpeed);
+	_motorFrontLeft->setSpeed(leftSpeed);
+	_motorRearRight->setSpeed(rightSpeed);
+	_motorRearLeft->setSpeed(leftSpeed);
 	_motorFrontRight->forward();
 	_motorFrontLeft->backward();
 	_motorRearRight->forward();
 	_motorRearLeft->backward();
 }
 
-void TwoControllerBase::driveRight(unsigned short driveSpeed){
-	_motorFrontRight->setSpeed(driveSpeed);
-	_motorFrontLeft->setSpeed(driveSpeed);
-	_motorRearRight->setSpeed(driveSpeed);
-	_motorRearLeft->setSpeed(driveSpeed);
+void TwoControllerBase::driveRight(unsigned short frontSpeed, unsigned short backSpeed){
+	_motorFrontRight->setSpeed(frontSpeed);
+	_motorFrontLeft->setSpeed(frontSpeed);
+	_motorRearRight->setSpeed(backSpeed);
+	_motorRearLeft->setSpeed(backSpeed);
 	_motorFrontRight->backward();
 	_motorFrontLeft->forward();
 	_motorRearRight->forward();
 	_motorRearLeft->backward();
 }
 
-void TwoControllerBase::driveLeft(unsigned short driveSpeed){
-	_motorFrontRight->setSpeed(driveSpeed);
-	_motorFrontLeft->setSpeed(driveSpeed);
-	_motorRearRight->setSpeed(driveSpeed);
-	_motorRearLeft->setSpeed(driveSpeed);
+void TwoControllerBase::driveLeft(unsigned short frontSpeed, unsigned short backSpeed){
+	_motorFrontRight->setSpeed(frontSpeed);
+	_motorFrontLeft->setSpeed(frontSpeed);
+	_motorRearRight->setSpeed(backSpeed);
+	_motorRearLeft->setSpeed(backSpeed);
 	_motorFrontRight->forward();
 	_motorFrontLeft->backward();
 	_motorRearRight->backward();

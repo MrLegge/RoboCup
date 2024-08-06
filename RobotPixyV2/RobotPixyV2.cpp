@@ -57,7 +57,7 @@ bool RobotPixyV2::isInFront(int requiredSignature){
    getData();
 	if (blocks){      
       for (int j=0; j<blocks; j++){  
-		if(myPixy.ccc.blocks[j].x > 120 && myPixy.ccc.blocks[j].x < 180 && myPixy.ccc.blocks[j].signature == requiredSignature){
+		if(myPixy.ccc.blocks[j].x > 135 && myPixy.ccc.blocks[j].x < 180 && myPixy.ccc.blocks[j].signature == requiredSignature){
 			return true;      
 		}else{
 			return false;

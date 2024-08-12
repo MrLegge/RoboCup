@@ -16,7 +16,7 @@
 			int getY(int);
 			void lightsOn(void); 
 			void lightsOff(void);
-			RobotPixy();
+			RobotPixyV2();
 			
 		private:
 			uint16_t blocks;

@@ -17,7 +17,7 @@ LineSensor::LineSensor(){
 LineSensor::LineSensor(int signalPin){
   _signalPin = signalPin;
  _lineFlag = false;
- pinMode(signalPin, INPUT);
+ pinMode(_signalPin, INPUT);
 }
 
 bool LineSensor::onLine(){
